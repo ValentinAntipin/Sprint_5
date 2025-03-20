@@ -11,7 +11,8 @@ def browser_settings():
 
 @pytest.fixture
 def driver():
-    chrome = webdriver.Chrome(options=browser_settings())
+    chrome = webdriver.Chrome()
+    chrome.maximize_window()
     chrome.get(Config.URL)
     yield chrome
     chrome.quit()
